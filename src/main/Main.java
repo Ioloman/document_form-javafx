@@ -190,9 +190,9 @@ public class Main extends Application {
                 income += Integer.parseInt(row.getIncome());
             if (row.getSentToStorageOrCompensatedByRecipient() != null)
                 sent += Integer.parseInt(row.getSentToStorageOrCompensatedByRecipient());
-            if (row.getPrice() != null)
+            if (row.getPrice() != null && !row.getPrice().equals(""))
                 price = price.add(new BigDecimal(row.getPrice()));
-            if (row.getTotalPrice() != null)
+            if (row.getTotalPrice() != null && !row.getTotalPrice().equals(""))
                 totalPrice = totalPrice.add(new BigDecimal(row.getTotalPrice()));
         }
         price.setScale(2, RoundingMode.HALF_DOWN);
