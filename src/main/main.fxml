@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="1159.0">
+          <children>
+              <MenuBar fx:id="menu" prefWidth="600.0">
+                  <menus>
+                      <Menu fx:id="menuFile" mnemonicParsing="false" text="Файл">
+                          <items>
+                              <MenuItem fx:id="menuSave" mnemonicParsing="false" text="Сохранить (Ctrl + S)" />
+                              <MenuItem fx:id="menuSaveAs" mnemonicParsing="false" text="Сохранить как" />
+                          </items>
+                      </Menu>
+                  </menus>
+              </MenuBar>
+              <Pane prefHeight="423.0" prefWidth="615.0" VBox.vgrow="ALWAYS">
+                  <children>
+                      <VBox prefHeight="583.0" prefWidth="1159.0">
+                          <children>
+                              <Pane prefHeight="39.0" prefWidth="1056.0">
+                                  <VBox.margin>
+                                      <Insets top="5.0" />
+                                  </VBox.margin>
+                                  <children>
+                                      <GridPane prefHeight="30.0" prefWidth="946.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.33331298828125" minWidth="10.0" prefWidth="163.33333079020184" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="407.33334732055664" minWidth="10.0" prefWidth="265.9999796549479" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0000305175781" minWidth="10.0" prefWidth="219.88893636067712" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0000305175781" minWidth="10.0" prefWidth="292.7777303059896" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <children>
+                                              <Label prefHeight="26.0" prefWidth="135.0" text="Ведомость">
+                                                  <font>
+                                                      <Font name="Tahoma" size="14.0" />
+                                                  </font>
+                                              </Label>
+                                              <HBox prefHeight="30.0" prefWidth="258.0" GridPane.columnIndex="2">
+                                                  <children>
+                                                      <Label maxWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" text="от:">
+                                                          <font>
+                                                              <Font name="Tahoma" size="14.0" />
+                                                          </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="date">
+                                                          <HBox.margin>
+                                                              <Insets top="3.0" />
+                                                          </HBox.margin>
+                                                      </DatePicker>
+                                                  </children>
+                                              </HBox>
+                                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                  <children>
+                                                      <Label prefHeight="26.0" prefWidth="26.0" text="№:">
+                                                          <font>
+                                                              <Font name="Tahoma" size="14.0" />
+                                                          </font>
+                                                      </Label>
+                                                      <TextField fx:id="number" prefHeight="25.0" prefWidth="203.0" />
+                                                  </children>
+                                              </HBox>
+                                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                                  <children>
+                                                      <Label prefHeight="26.0" prefWidth="289.0" text="учета движения посуды и  приборов.">
+                                                          <font>
+                                                              <Font name="Tahoma" size="14.0" />
+                                                          </font>
+                                                      </Label>
+                                                  </children>
+                                              </HBox>
+                                          </children>
+                                      </GridPane>
+                                  </children>
+                              </Pane>
+                              <Pane prefHeight="40.0" prefWidth="673.0">
+                                  <children>
+                                      <GridPane prefHeight="30.0" prefWidth="1137.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.33331298828125" minWidth="10.0" prefWidth="178.11109415690103" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="533.4444630940754" minWidth="10.0" prefWidth="419.55560302734375" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="537.1110636393229" minWidth="10.0" prefWidth="537.1110636393229" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <children>
+                                              <Label prefHeight="26.0" prefWidth="135.0" text="Организация:">
+                                                  <font>
+                                                      <Font name="Tahoma" size="14.0" />
+                                                  </font>
+                                              </Label>
+                                              <ComboBox fx:id="organization" editable="true" prefHeight="25.0" prefWidth="362.0" GridPane.columnIndex="1">
+                                                  <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                  </GridPane.margin>
+                                              </ComboBox>
+                                              <GridPane GridPane.columnIndex="2">
+                                                  <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.33331298828125" minWidth="10.0" prefWidth="172.6666259765625" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.6666666666666" minWidth="10.0" prefWidth="364.00004069010424" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                  <children>
+                                                      <Label prefHeight="26.0" prefWidth="143.0" text="Структурное подр-е:">
+                                                          <font>
+                                                              <Font name="Tahoma" size="14.0" />
+                                                          </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="subdivision" disable="true" editable="true" prefHeight="25.0" prefWidth="334.0" GridPane.columnIndex="1">
+                                                          <GridPane.margin>
+                                                              <Insets left="10.0" right="10.0" />
+                                                          </GridPane.margin>
+                                                      </ComboBox>
+                                                  </children>
+                                              </GridPane>
+                                          </children>
+                                      </GridPane>
+                                  </children>
+                              </Pane>
+                              <Pane prefHeight="40.0" prefWidth="673.0">
+                                  <children>
+                                      <GridPane prefWidth="673.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.33331298828125" minWidth="10.0" prefWidth="163.33333079020184" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="407.33334732055664" minWidth="10.0" prefWidth="265.9999796549479" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0000305175781" minWidth="10.0" prefWidth="252.66668701171875" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <children>
+                                              <Label prefHeight="26.0" prefWidth="135.0" text="Отчетный период:">
+                                                  <font>
+                                                      <Font name="Tahoma" size="14.0" />
+                                                  </font>
+                                              </Label>
+                                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                  <children>
+                                                      <Label maxWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" text="по:">
+                                                          <font>
+                                                              <Font name="Tahoma" size="14.0" />
+                                                          </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="periodUntil">
+                                                          <HBox.margin>
+                                                              <Insets top="3.0" />
+                                                          </HBox.margin>
+                                                      </DatePicker>
+                                                  </children>
+                                              </HBox>
+                                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                  <children>
+                                                      <Label maxWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" text="с:">
+                                                          <font>
+                                                              <Font name="Tahoma" size="14.0" />
+                                                          </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="periodFrom">
+                                                          <HBox.margin>
+                                                              <Insets top="3.0" />
+                                                          </HBox.margin>
+                                                      </DatePicker>
+                                                  </children>
+                                              </HBox>
+                                          </children>
+                                      </GridPane>
+                                  </children>
+                              </Pane>
+                              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="673.0">
+                                  <children>
+                                      <Label prefHeight="17.0" prefWidth="103.0" text="Наименование:">
+                                          <font>
+                                              <Font name="Tahoma" size="14.0" />
+                                          </font>
+                                      </Label>
+                                      <ComboBox fx:id="dishName" editable="true" prefWidth="150.0" />
+                                      <Label prefHeight="17.0" prefWidth="49.0" text="Код:">
+                                          <HBox.margin>
+                                              <Insets left="5.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font name="Tahoma" size="14.0" />
+                                          </font>
+                                      </Label>
+                                      <ComboBox fx:id="dishCode" editable="true" prefWidth="150.0" />
+                                      <Label prefHeight="17.0" prefWidth="49.0" text="Цена:">
+                                          <font>
+                                              <Font name="Tahoma" size="14.0" />
+                                          </font>
+                                          <HBox.margin>
+                                              <Insets left="5.0" />
+                                          </HBox.margin>
+                                      </Label>
+                              <TextField fx:id="dishPrice" />
+                                      <Button fx:id="addButton" mnemonicParsing="false" text="Добавить">
+                                          <HBox.margin>
+                                              <Insets left="5.0" />
+                                          </HBox.margin>
+                                      </Button>
+                                  </children>
+                              </HBox>
+                              <TabPane fx:id="tabPane" prefHeight="326.0" prefWidth="1151.0" tabClosingPolicy="UNAVAILABLE">
+                                  <tabs>
+                                      <Tab fx:id="leftTab" text="Начало отчетного периода">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="309.0" prefWidth="1096.0">
+                                                  <children>
+                                                      <ScrollPane fx:id="leftScroll" layoutX="-1.0" prefHeight="310.0" prefWidth="1151.0">
+                                                          <content>
+                                                              <TableView fx:id="leftTable" editable="true" prefHeight="357.0" prefWidth="1141.0">
+                                                                  <columns>
+                                                                      <TableColumn prefWidth="34.00003182888031" text="№" />
+                                                                        <TableColumn prefWidth="126.00000381469727" text="Наименование" />
+                                                                        <TableColumn minWidth="0.0" prefWidth="91.33331298828125" text="Код" />
+                                                                      <TableColumn prefWidth="105.11106872558594" text="Цена, руб. коп." />
+                                                                        <TableColumn prefWidth="98.66665649414062" text="Количество, шт." />
+                                                                        <TableColumn minWidth="0.0" prefWidth="105.3333740234375" text="Сумма, руб. коп." />
+                                                                      <TableColumn prefWidth="122.88885498046875" text="Поступление за отчетный период из кладовой, шт." />
+                                                                      <TableColumn prefWidth="144.4444580078125" text="Сдано в кладовую и возмещено получателем, шт." />
+                                                                  </columns>
+                                                              </TableView>
+                                                          </content>
+                                                      </ScrollPane>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </Tab>
+                                      <Tab text="Конец отчетного периода">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="309.0" prefWidth="1096.0">
+                                                  <children>
+                                                      <ScrollPane fx:id="rightScroll" layoutX="-1.0" prefHeight="310.0" prefWidth="1151.0">
+                                                          <content>
+                                                              <TableView editable="true" prefHeight="357.0" prefWidth="1141.0">
+                                                                  <columns>
+                                                                      <TableColumn prefWidth="34.00003182888031" text="№" />
+                                                                        <TableColumn prefWidth="126.11112976074219" text="Наименование" />
+                                                                        <TableColumn minWidth="0.0" prefWidth="91.33334350585938" text="Код" />
+                                                                        <TableColumn prefWidth="108.66664123535156" text="Бой, лом: количество, шт." />
+                                                                        <TableColumn prefWidth="100.66668701171875" text="Бой, лом: сумма, руб. коп." />
+                                                                        <TableColumn prefWidth="108.00009155273438" text="Утрачено, пропало: количество, шт." />
+                                                                        <TableColumn prefWidth="110.6666259765625" text="Утрачено, пропало: сумма, руб. коп." />
+                                                                        <TableColumn prefWidth="120.4444580078125" text="Остаток на конец отчетного периода: количество, шт." />
+                                                                        <TableColumn prefWidth="122.88897705078125" text="Остаток на конец отчетного периода: сумма, руб. коп." />
+                                                                      <TableColumn prefWidth="199.11090087890625" text="Примечание" />
+                                                                  </columns>
+                                                              </TableView>
+                                                          </content>
+                                                      </ScrollPane>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+      
+                                      </Tab>
+                                  </tabs>
+                              </TabPane>
+                        <Pane prefHeight="40.0" prefWidth="673.0">
+                           <children>
+                              <GridPane layoutX="105.0" prefHeight="30.0" prefWidth="1033.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.66666666666663" minWidth="10.0" prefWidth="142.77779134114581" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="933.7777964274089" minWidth="10.0" prefWidth="890.2222086588542" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="26.0" prefWidth="85.0" text="Итого:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="list" fixedCellSize="0.0" orientation="HORIZONTAL" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </ListView>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Pane>
+                              <Pane prefHeight="40.0" prefWidth="673.0">
+                                  <children>
+                                      <GridPane prefHeight="30.0" prefWidth="1137.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.55555216471353" minWidth="10.0" prefWidth="244.55555216471353" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="533.4444630940754" minWidth="10.0" prefWidth="321.5555623372396" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="571.1111043294272" minWidth="10.0" prefWidth="571.1111043294272" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <children>
+                                              <Label prefHeight="26.0" prefWidth="234.0" text="Материально ответственное лицо:">
+                                                  <font>
+                                                      <Font name="Tahoma" size="14.0" />
+                                                  </font>
+                                              </Label>
+                                              <ComboBox fx:id="matName" editable="true" prefHeight="25.0" prefWidth="362.0" GridPane.columnIndex="1">
+                                                  <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                  </GridPane.margin>
+                                              </ComboBox>
+                                              <GridPane GridPane.columnIndex="2">
+                                                  <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.33331298828125" minWidth="10.0" prefWidth="172.6666259765625" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.6666666666666" minWidth="10.0" prefWidth="364.00004069010424" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                  <children>
+                                                      <Label prefHeight="26.0" prefWidth="154.0" text="Проверил бухгалтер:">
+                                                          <font>
+                                                              <Font name="Tahoma" size="14.0" />
+                                                          </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="buhName" editable="true" prefHeight="25.0" prefWidth="334.0" GridPane.columnIndex="1">
+                                                          <GridPane.margin>
+                                                              <Insets left="10.0" right="10.0" />
+                                                          </GridPane.margin>
+                                                      </ComboBox>
+                                                  </children>
+                                              </GridPane>
+                                          </children>
+                                      </GridPane>
+                                  </children>
+                              </Pane>
+                              <Button fx:id="saveButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Сохранить" />
+                          </children>
+                          <padding>
+                              <Insets left="5.0" right="5.0" />
+                          </padding>
+                      </VBox>
+                  </children>
+              </Pane>
+          </children>
+      </VBox>
+   </children>
+</AnchorPane>
